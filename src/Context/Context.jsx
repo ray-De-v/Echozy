@@ -77,7 +77,6 @@ export const AppProvider = ({ children }) => {
     sidebar,
     setSideBar,
     API,
-    normalApi,
     posts,
     friends,
     nonFriends,
