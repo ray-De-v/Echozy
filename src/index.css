@@ -1,0 +1,28 @@
+/* *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+} */
+
+
+@import "tailwindcss";
+@theme {
+  /* --color-primary: #39D25F; */
+  --color-primary: #4A4DFA;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #F2F4F7;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+.over-hidden{
+  overflow: hidden !important;
+}
+
+/* You were handling Image hidden property Ali */
