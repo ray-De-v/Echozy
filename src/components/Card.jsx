@@ -63,9 +63,7 @@ const Card = ({ post, author }) => {
     toast.success("Comment posted");
   };
 
-  const profilePhotoUrl = author?.profilePhoto?.startsWith("https://res.cloudinary")
-    ? author.profilePhoto
-    : `${normalApi}${author?.profilePhoto || "/public/default_profile.jpeg"}`;
+
 
   // Use the formatTimeAgo function here
   const formattedDate = formatTimeAgo(post.createdAt);
@@ -83,7 +81,7 @@ const Card = ({ post, author }) => {
             <div className="flex items-center gap-3">
               <div className="relative">
                 <img
-                  src={profilePhotoUrl}
+                  src={author?.profilePhoto}
                   alt={author?.firstName || "User"}
                   className="w-12 h-12 rounded-full object-cover cursor-pointer border-2 border-white shadow-sm"
                 />
@@ -166,7 +164,7 @@ const Card = ({ post, author }) => {
         <div className="px-4 py-3 border-t border-gray-100">
           <div className="flex items-center gap-2">
             <img
-              src={profilePhotoUrl}
+              src={author?.profilePhoto}
               alt="Your profile"
               className="w-8 h-8 rounded-full object-cover"
             />

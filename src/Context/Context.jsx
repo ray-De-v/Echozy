@@ -17,12 +17,10 @@ export const AppProvider = ({ children }) => {
 
   const API = axios.create({
     baseURL:
-      import.meta.env.VITE_API_URL ||
-      "https://social-media-app-9sjo.vercel.app",
+      import.meta.env.VITE_API_URL || "https://client-side-peach.vercel.app",
     withCredentials: true, // send cookies
   });
 
-  const normalApi = "https://social-media-app-9sjo.vercel.app/";
 
   const fetchAllPosts = async () => {
     try {

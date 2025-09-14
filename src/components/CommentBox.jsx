@@ -30,12 +30,7 @@ const CommentBox = ({ user, comment, post, setComment }) => {
     }
   };
 
-  const profilePhotoUrl = user?.profilePhoto?.startsWith("https://res.cloudinary")
-    ? user.profilePhoto
-    : user?.profilePhoto
-    ? `${normalApi}${user.profilePhoto}`
-    : "/default_profile.jpeg";
-
+  const profilePhotoUrl = user?.profilePhoto
   return (
     <div className="flex gap-3 group p-3 rounded-lg transition-all duration-200 hover:bg-gray-50/80">
       {/* Profile Image with Gradient Border */}

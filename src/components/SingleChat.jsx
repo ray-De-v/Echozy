@@ -14,7 +14,7 @@ const SingleChat = ({ singleUser, setSingleUser }) => {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const messagesEndRef = useRef(null);
 
-  const profilePhoto = singleUser?.profilePhoto?.startsWith("https://res.cloudinary")
+  const profilePhoto = singleUser?.profilePhoto
     ? singleUser.profilePhoto
     : `${normalApi}${singleUser?.profilePhoto || "/public/default_profile.jpeg"}`;
 

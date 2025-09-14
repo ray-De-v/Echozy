@@ -45,11 +45,7 @@ const Sidebar = () => {
           <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 p-0.5">
             <img
               src={
-                user?.profilePhoto?.startsWith("https://res.cloudinary")
-                  ? user.profilePhoto
-                  : `${normalApi}${
-                      user?.profilePhoto || "/public/default_profile.jpeg"
-                    }`
+                user?.profilePhoto
               }
               alt="Profile"
               className="w-full h-full rounded-full object-cover border-2 border-white"

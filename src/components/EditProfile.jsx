@@ -69,16 +69,12 @@ const EditProfile = ({ setDisplayEdit, fetchPosts }) => {
 
   const profilePhotoUrl = profilePhoto
     ? URL.createObjectURL(profilePhoto)
-    : user?.profilePhoto?.startsWith("https://res.cloudinary")
-    ? user.profilePhoto
-    : `${normalApi}${user?.profilePhoto || "/public/default_profile.jpeg"}`;
+    : user?.profilePhoto;
 
   const coverPhotoUrl = coverPhoto
     ? URL.createObjectURL(coverPhoto)
-    : user?.coverPhoto?.startsWith("https://res.cloudinary")
-    ? user.coverPhoto
-    : `${normalApi}${user?.coverPhoto || "/public/default_cover.png"}`;
-
+    : user?.coverPhoto;
+    
   return (
     <>
       {loader && (

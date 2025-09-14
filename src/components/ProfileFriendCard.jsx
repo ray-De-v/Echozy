@@ -5,12 +5,9 @@ import { FaUser } from "react-icons/fa";
 const ProfileFriendCard = ({ friend }) => {
   const { normalApi } = useAppContext();
   
-  const profilePhotoUrl = friend?.profilePhoto?.startsWith("https://res.cloudinary")
-    ? friend.profilePhoto
-    : `${normalApi}${friend?.profilePhoto || "/public/default_cover.png"}`;
+  const profilePhotoUrl = friend?.profilePhoto;
 
-  const isDefaultImage = !friend?.profilePhoto?.startsWith("https://res.cloudinary") && 
-                         !friend?.profileProfile?.includes("/public/default_cover.png");
+  const isDefaultImage = !friend?.profilePhoto;
 
   return (
     <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all duration-200 w-full group">

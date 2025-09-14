@@ -8,7 +8,7 @@ const MessageBubble = ({ message, isOwnMessage, formatTime }) => {
 
   const handleDeleteMsg = async () => {
     try {
-      const res = await API.post("api/user/message/delete", {
+      const res = await API.post("/api/user/message/delete", {
         msgId: message._id,
       });
       if (res.data.success) {

@@ -5,7 +5,8 @@ import { useAuth } from "./../Context/authContext";
 import { toast } from "react-hot-toast";
 
 const Create = () => {
-  const { API, setCreate, normalApi, navigateTo, fetchAllPosts } = useAppContext();
+  const { API, setCreate, normalApi, navigateTo, fetchAllPosts } =
+    useAppContext();
   const [postContent, setPostContent] = useState("");
   const [image, setImage] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,7 +44,7 @@ const Create = () => {
 
   const onSumbitHandler = async (e) => {
     e.preventDefault();
-    
+
     if (!postContent.trim() && !image) {
       toast.error("Please add some content or an image to your post");
       return;
@@ -60,7 +61,7 @@ const Create = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      
+
       if (response.data.success) {
         toast.success("Posted successfully! 🎉");
         setImage(null);
@@ -72,15 +73,15 @@ const Create = () => {
         toast.error(response.data.message);
       }
     } catch (error) {
-      toast.error(error.response?.data?.message || "An error occurred while posting");
+      toast.error(
+        error.response?.data?.message || "An error occurred while posting"
+      );
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const profilePhotoUrl = user?.profilePhoto?.startsWith("https://res.cloudinary")
-    ? user.profilePhoto
-    : `${normalApi}${user?.profilePhoto || "/public/default_profile.jpeg"}`;
+  const profilePhotoUrl = user?.profilePhoto;
 
   return (
     <>
@@ -92,7 +93,7 @@ const Create = () => {
           </div>
         </div>
       )}
-      
+
       <div className="fixed inset-0 bg-black/60 z-40 flex items-center justify-center p-4 backdrop-blur-sm overflow-y-auto">
         <div className="bg-white rounded-2xl w-full max-w-2xl mx-auto my-8 shadow-2xl max-h-[90vh] flex flex-col">
           {/* Header */}
@@ -134,10 +135,16 @@ const Create = () => {
                 placeholder="What's on your mind?"
                 className="w-full resize-none outline-none text-gray-900 placeholder-gray-500 min-h-[120px] border-none focus:ring-0 text-base"
               />
-              
+
               {/* Character Counter */}
               <div className="flex justify-end mb-4">
-                <span className={`text-sm ${charCount > MAX_CHARS * 0.8 ? 'text-orange-500' : 'text-gray-500'}`}>
+                <span
+                  className={`text-sm ${
+                    charCount > MAX_CHARS * 0.8
+                      ? "text-orange-500"
+                      : "text-gray-500"
+                  }`}
+                >
                   {charCount}/{MAX_CHARS}
                 </span>
               </div>
@@ -162,7 +169,9 @@ const Create = () => {
 
               {/* Action Bar */}
               <div className="border border-gray-200 rounded-xl p-4 mb-6">
-                <p className="text-gray-700 font-medium mb-3">Add to your post</p>
+                <p className="text-gray-700 font-medium mb-3">
+                  Add to your post
+                </p>
                 <div className="flex items-center gap-4">
                   <label
                     htmlFor="image"

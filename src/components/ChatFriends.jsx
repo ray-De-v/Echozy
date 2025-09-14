@@ -4,11 +4,7 @@ import { useAppContext } from "../Context/Context";
 const ChatFriendCard = ({ friend, setSingleUser }) => {
   const { normalApi } = useAppContext();
 
-  const profilePhoto = friend?.profilePhoto?.startsWith(
-    "https://res.cloudinary"
-  )
-    ? friend.profilePhoto
-    : `${normalApi}${friend?.profilePhoto || "/public/default_profile.jpeg"}`;
+  const profilePhoto = friend?.profilePhoto
 
   return (
     <div

@@ -108,11 +108,7 @@ const Profile = () => {
           <div className="flex items-center gap-3">
             <img
               src={
-                user?.profilePhoto?.startsWith("https://res.cloudinary")
-                  ? user.profilePhoto
-                  : `${normalApi}${
-                      user?.profilePhoto || "/public/default_profile.jpeg"
-                    }`
+                user?.profilePhoto
               }
               alt="Profile"
               className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm"

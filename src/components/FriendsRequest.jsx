@@ -52,13 +52,9 @@ const FriendsRequest = ({ request }) => {
     }
   };
 
-  const profilePhotoUrl = request?.profilePhoto?.startsWith("https://res.cloudinary")
-    ? request.profilePhoto
-    : `${normalApi}${request?.profilePhoto || "/public/default_profile.jpeg"}`;
+  const profilePhotoUrl = request?.profilePhoto;
 
-  const isDefaultImage =
-    !request?.profilePhoto?.startsWith("https://res.cloudinary") &&
-    !request?.profilePhoto?.includes("/public/default_profile.jpeg");
+  const isDefaultImage = !request?.profilePhoto;
 
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100 w-72">

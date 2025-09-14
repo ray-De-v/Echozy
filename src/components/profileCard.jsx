@@ -51,9 +51,7 @@ const ProfileCard = ({ post, fetchPosts }) => {
     toast.success("Comment posted successfully");
   };
 
-  const profilePhotoUrl = user?.profilePhoto?.startsWith("https://res.cloudinary")
-    ? user.profilePhoto
-    : `${normalApi}${user?.profilePhoto || "/public/default_profile.jpeg"}`;
+  const profilePhotoUrl = user?.profilePhoto;
 
   // Calculate time difference for "X time ago" display
   const getTimeAgo = (date) => {
