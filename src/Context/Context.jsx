@@ -66,8 +66,6 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchAllPosts();
-    fetchAllFriends();
-    fetchAllFriendsRequest();
   }, []);
 
   const value = {
