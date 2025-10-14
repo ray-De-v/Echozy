@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`lg:w-fit h-screen fixed bottom-0 z-50 transition-all duration-300 lg:left-0 lg:opacity-100 lg:right-auto
+      className={`lg:w-fit h-screen fixed bottom-0 z-50  lg:left-0 lg:opacity-100 lg:right-auto
         ${
           sidebar
             ? "left-0 opacity-100 w-80 bg-white shadow-2xl"
@@ -22,7 +22,7 @@ const Sidebar = () => {
     >
       {/* Mobile Header with Close Button */}
       {sidebar && (
-        <div className="lg:hidden flex items-center justify-between p-5 border-b border-gray-200 bg-white">
+        <div className="lg:hidden flex items-center justify-between p-5 border-b border-gray-200 bg-white mt-3">
           <h2 className="text-xl font-bold text-gray-900">Menu</h2>
           <button
             onClick={() => setSideBar(false)}
