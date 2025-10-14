@@ -64,10 +64,6 @@ export const AppProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    fetchAllPosts();
-  }, []);
-
   const value = {
     navigateTo,
     create,
