@@ -7,36 +7,33 @@ export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [authChecked, setAuthChecked] = useState(false); // wait until checkAuth finishes
+  const [authChecked, setAuthChecked] = useState(false);
 
-  const { API } = useAppContext();
-  const { posts,
-          friends,
-          nonFriends,
-          frdRequests,
-          fetchAllFriends,
-          fetchAllFriendsRequest,
-          fetchAllPosts} = useAppContext();
+  const {
+    API,
+    fetchAllPosts,
+    fetchAllFriends,
+    fetchAllFriendsRequest,
+  } = useAppContext();
+
   useEffect(() => {
     const checkAuth = async () => {
       try {
         const res = await API.get("/api/user/check-auth");
-        if (res.data.authenticated) {
+        if (res.data.authenticated && res.data.user) {
           setUser(res.data.user);
-          posts()
-          friends()
-          nonFriends()
-          frdRequests()
-          fetchAllFriends()
-          fetchAllFriendsRequest()
-          fetchAllPosts()
+          await fetchAllPosts();
+          await fetchAllFriends();
+          await fetchAllFriendsRequest();
         }
       } catch (err) {
+        console.error("Auth check failed:", err);
         setUser(null);
       } finally {
-        setAuthChecked(true); // prevent blocking render forever
+        setAuthChecked(true);
       }
     };
+
     checkAuth();
   }, []);
 
