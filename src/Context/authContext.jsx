@@ -10,12 +10,26 @@ export const AuthProvider = ({ children }) => {
   const [authChecked, setAuthChecked] = useState(false); // wait until checkAuth finishes
 
   const { API } = useAppContext();
+  const { posts,
+          friends,
+          nonFriends,
+          frdRequests,
+          fetchAllFriends,
+          fetchAllFriendsRequest,
+          fetchAllPosts} = useAppContext();
   useEffect(() => {
     const checkAuth = async () => {
       try {
         const res = await API.get("/api/user/check-auth");
         if (res.data.authenticated) {
           setUser(res.data.user);
+          posts()
+          friends()
+          nonFriends()
+          frdRequests()
+          fetchAllFriends()
+          fetchAllFriendsRequest()
+          fetchAllPosts()
         }
       } catch (err) {
         setUser(null);
