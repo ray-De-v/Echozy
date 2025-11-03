@@ -14,7 +14,7 @@ const Create = () => {
   const fileInputRef = useRef(null);
   const { user } = useAuth();
 
-  const MAX_CHARS = 500;
+  const MAX_CHARS = 5000;
 
   const handleTextChange = (e) => {
     const text = e.target.value;
