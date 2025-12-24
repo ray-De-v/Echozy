@@ -16,7 +16,7 @@ const Welcome = () => {
 
     const timer = setTimeout(() => {
       navigate("/home");
-    }, 5000);
+    }, 7000);
 
     // Progress bar animation
     const interval = setInterval(() => {
