@@ -304,14 +304,7 @@ const Login = () => {
         </div>
 
         <div className="mt-6 text-center text-sm text-gray-500">
-          By continuing, you agree to Echozy's{" "}
-          <button className="text-blue-600 hover:underline">
-            Terms of Service
-          </button>{" "}
-          and{" "}
-          <button className="text-blue-600 hover:underline">
-            Privacy Policy
-          </button>
+          Your information is kept private and is never shared with third parties.
         </div>
       </div>
 
