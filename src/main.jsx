@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { AppProvider } from "./Context/Context.jsx";
 import { AuthProvider } from "./Context/authContext.jsx";
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById("app")).render(
   <BrowserRouter>
     <AppProvider>
       <AuthProvider>
