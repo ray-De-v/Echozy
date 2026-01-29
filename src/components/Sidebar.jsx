@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`lg:w-fit h-screen fixed bottom-0 transition z-50  lg:left-0 lg:opacity-100 lg:right-auto
+      className={`lg:w-fit h-screen fixed bottom-0 transition duration-300 z-50  lg:left-0 lg:opacity-100 lg:right-auto
         ${
           sidebar
             ? "left-0 opacity-100 w-80 bg-white shadow-2xl"
