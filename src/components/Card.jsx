@@ -81,7 +81,7 @@ const Card = ({ post, author }) => {
             <div className="flex items-center gap-3">
               <div className="relative">
                 <img
-                  src={author?.profilePhoto}
+                  src={author?.profilePhoto ? author.profilePhoto : assets.logo.png}
                   alt={author?.firstName || "User"}
                   className="w-12 h-12 rounded-full object-cover cursor-pointer border-2 border-white shadow-sm"
                 />
