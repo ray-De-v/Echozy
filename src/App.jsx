@@ -11,6 +11,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { Toaster } from "react-hot-toast";
 import Welcome from "./pages/Welcome";
 import Message from "./pages/Message";
+import { Link } from "react-router-dom";
 
 
 const  NotFound = () =>  {
