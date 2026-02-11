@@ -1,45 +1,35 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { useAppContext } from "./Context";
+// src/Context/authContext.jsx
+
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const AuthContext = createContext();
 
-export const useAuth = () => useContext(AuthContext);
-
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [authChecked, setAuthChecked] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState(null);
 
-  const {
-    API,
-    fetchAllPosts,
-    fetchAllFriends,
-    fetchAllFriendsRequest,
-  } = useAppContext();
+    useEffect(() => {
+        // Simulate an async call to fetch user data
+        const fetchUser = async () => {
+            // Simulating loading
+            setLoading(true);
+            const response = await new Promise((resolve) => {
+                // Simulating API call delay
+                setTimeout(() => resolve({ username: 'exampleUser' }), 2000);
+            });
+            setUser(response);
+            setLoading(false);
+        };
+        fetchUser();
+    }, []);
 
-  useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        const res = await API.get("/api/user/check-auth");
-        if (res.data.authenticated && res.data.user) {
-          setUser(res.data.user);
-          await fetchAllPosts();
-          await fetchAllFriends();
-          await fetchAllFriendsRequest();
-        }
-      } catch (err) {
-        console.error("Auth check failed:", err);
-        setUser(null);
-      } finally {
-        setAuthChecked(true);
-      }
-    };
+    return (
+        <AuthContext.Provider value={{ user, loading }}>
+            {children}
+        </AuthContext.Provider>
+    );
+};
 
-    checkAuth();
-  }, []);
-
-  return (
-    <AuthContext.Provider value={{ user, setUser, authChecked }}>
-      {children}
-    </AuthContext.Provider>
-  );
+export const useAuth = () => {
+    return useContext(AuthContext);
 };
