@@ -3,17 +3,11 @@ import { useAppContext } from "./Context";
 
 const AuthContext = createContext();
 
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error("useAuth must be used within AuthProvider");
-  }
-  return context;
-};
+export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [authChecked, setAuthChecked] = useState(false);
 
   const {
     API,
@@ -36,7 +30,7 @@ export const AuthProvider = ({ children }) => {
         console.error("Auth check failed:", err);
         setUser(null);
       } finally {
-        setLoading(false);
+        setAuthChecked(true);
       }
     };
 
@@ -44,7 +38,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, setUser, loading }}>
+    <AuthContext.Provider value={{ user, setUser, authChecked }}>
       {children}
     </AuthContext.Provider>
   );
