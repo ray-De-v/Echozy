@@ -48,8 +48,6 @@ const LandingPage = () => {
   // 2️⃣ Background images - memoized to prevent re-creation
   const backgroundImages = useMemo(
     () => [
-      assets.display_img2,
-      "https://images.unsplash.com/photo-1527689361195-a4c1e4ec4d84?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80",
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       "https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=1932&q=80",
