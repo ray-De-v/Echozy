@@ -4,6 +4,46 @@ import { assets } from "./../assets/assets";
 import { useAppContext } from "../Context/Context";
 
 const LandingPage = () => {
+  useEffect(() => {
+  // 1️⃣ Change the page title
+  document.title = "Echozy – Connect with your Community";
+
+  // Helper function to safely update or create meta tags
+  const updateMeta = (selector, attr, value, isProperty = false) => {
+    try {
+      const meta = document.querySelector(selector);
+      if (meta) {
+        meta.setAttribute(attr, value);
+      } else {
+        const newMeta = document.createElement("meta");
+        if(isProperty) {
+          newMeta.setAttribute("property", selector.split('"')[1]); // extract og:title etc
+        } else {
+          newMeta.name = selector.split('"')[1]; // extract description etc
+        }
+        newMeta.setAttribute(attr, value);
+        document.head.appendChild(newMeta);
+      }
+    } catch (error) {
+      console.warn("Meta update failed:", error);
+    }
+  };
+
+  // 2️⃣ Update SEO Description
+  updateMeta('meta[name="description"]', "content", "Welcome to Echozy, a modern social media platform to connect, share moments, and explore communities.");
+
+  // 3️⃣ Update Open Graph tags (for social media)
+  updateMeta('meta[property="og:title"]', "content", "Echozy – Connect with your Community", true);
+  updateMeta('meta[property="og:description"]', "content", "Welcome to Echozy, a modern social media platform to connect, share moments, and explore communities.", true);
+  updateMeta('meta[property="og:url"]', "content", "https://echozy.vercel.app/", true);
+  updateMeta('meta[property="og:image"]', "content", "https://echozy.vercel.app/preview.png", true);
+
+}, []);
+
+
+
+
+  
   const { navigateTo } = useAppContext();
   const [currentImage, setCurrentImage] = useState(0);
   
