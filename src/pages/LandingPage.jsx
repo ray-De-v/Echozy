@@ -36,7 +36,7 @@ const LandingPage = () => {
   updateMeta('meta[property="og:title"]', "content", "Echozy – Connect with your Community", true);
   updateMeta('meta[property="og:description"]', "content", "Welcome to Echozy, a modern social media platform to connect, share moments, and explore communities.", true);
   updateMeta('meta[property="og:url"]', "content", "https://echozy.vercel.app/", true);
-  updateMeta('meta[property="og:image"]', "content", "https://echozy.vercel.app/preview.png", true);
+  updateMeta('meta[property="og:image"]', "content", "https://echozy.vercel.app/favicon-16x16.png", true);
 
 }, []);
 
