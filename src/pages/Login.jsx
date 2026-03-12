@@ -5,6 +5,48 @@ import toast from "react-hot-toast";
 import { useAuth } from "../Context/authContext";
 
 const Login = () => {
+
+  useEffect(() => {
+  document.title = "Login – Echozy Social Media";
+  
+  const setMeta = (name, content, property = false) => {
+    let tag;
+    if (property) {
+      tag = document.querySelector(`meta[property='${name}']`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute("property", name);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", content);
+    } else {
+      tag = document.querySelector(`meta[name='${name}']`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute("name", name);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", content);
+    }
+  };
+
+  // Standard meta description
+  setMeta("description", "Login to Echozy, the modern social media app to connect with friends and communities.");
+
+  // Open Graph meta tags (for social sharing)
+  setMeta("og:title", "Login – Echozy Social Media", true);
+  setMeta("og:description", "Login to Echozy, the modern social media app to connect with friends and communities.", true);
+  setMeta("og:type", "website", true);
+  setMeta("og:url", "https://echozy.vercel.app/login", true);
+  setMeta("og:image", "https://echozy.vercel.app/favicon-16x16.png", true);
+
+}, []);
+
+
+
+
+
+  
   const [current, setCurrent] = useState("create");
   const { navigateTo } = useAppContext();
   const [block, setBlock] = useState(false);
