@@ -13,7 +13,7 @@ const Ai = lazy(() => import("./pages/Ai"));
 const About = lazy(() => import("./pages/About"));
 const Welcome = lazy(() => import("./pages/Welcome"));
 const Message = lazy(() => import("./pages/Message"));
-import AboutPrerender from "./pages/AboutPrerender";
+const AboutPrerender = lazy(() => import("./pages/AboutPrerender.jsx"));
 
 // NotFound page (already light, can stay normal)
 const NotFound = () => {
