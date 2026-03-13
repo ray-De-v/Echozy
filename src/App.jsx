@@ -103,7 +103,9 @@ const App = () => {
           <Route
             path="/about-us"
             element={
+              <ProtectedRoute>
                 <About />
+              </ProtectedRoute>
             }
           />
           <Route
