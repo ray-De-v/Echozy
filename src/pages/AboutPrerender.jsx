@@ -6,6 +6,20 @@ const AboutPrerender = () => {
     // Set page title
     document.title = "About Echozy – Connect with Community";
 
+
+    const setCanonical = (url) => {
+    let link = document.querySelector("link[rel='canonical']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "canonical";
+      document.head.appendChild(link);
+    }
+    link.href = url;
+    };
+
+   setCanonical("https://echozy.vercel.app/about-prerender");
+    
+
     // SEO meta tags
     const setMeta = (name, content, isProperty = false) => {
       try {
