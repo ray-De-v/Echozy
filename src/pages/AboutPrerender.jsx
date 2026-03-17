@@ -1,8 +1,7 @@
-// src/pages/AboutPrerender.jsx
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const AboutPrerender = () => {
-
   useEffect(() => {
     document.title = "About Echozy – Modern Social Media Platform to Connect & Share";
 
@@ -69,12 +68,12 @@ const AboutPrerender = () => {
             their personal network — all in one place.
           </p>
           <div className="mt-8">
-            
-              href="/login"
+            <Link
+              to="/login"
               className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors text-lg"
             >
               Join Echozy Free Today
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -319,12 +318,12 @@ const AboutPrerender = () => {
             the Echozy social media platform. Sign up is completely free and
             takes less than 60 seconds.
           </p>
-          
-            href="/login"
+          <Link
+            to="/login"
             className="inline-block bg-white text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-colors shadow-lg"
           >
             Create Your Echozy Account
-          </a>
+          </Link>
         </div>
 
         {/* FOOTER */}
@@ -339,15 +338,15 @@ const AboutPrerender = () => {
             Created by Ali Sattar · Version 1.0.0 · © 2026 Echozy. All rights reserved.
           </p>
           <div className="flex justify-center gap-6">
-            <a href="/" className="text-blue-500 hover:text-blue-700 transition-colors">
+            <Link to="/" className="text-blue-500 hover:text-blue-700 transition-colors">
               Home
-            </a>
-            <a href="/login" className="text-blue-500 hover:text-blue-700 transition-colors">
+            </Link>
+            <Link to="/login" className="text-blue-500 hover:text-blue-700 transition-colors">
               Login
-            </a>
-            <a href="/about-prerender" className="text-blue-500 hover:text-blue-700 transition-colors">
+            </Link>
+            <Link to="/about-prerender" className="text-blue-500 hover:text-blue-700 transition-colors">
               About
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -357,4 +356,3 @@ const AboutPrerender = () => {
 };
 
 export default AboutPrerender;
-
