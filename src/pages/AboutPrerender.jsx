@@ -2,23 +2,21 @@
 import React, { useEffect } from "react";
 
 const AboutPrerender = () => {
+  
   useEffect(() => {
     // Set page title
-    document.title = "About Echozy – Connect with Community";
-
+    document.title = "About Echozy – Our Mission, Story & Values";
 
     const setCanonical = (url) => {
-    let link = document.querySelector("link[rel='canonical']");
-    if (!link) {
-      link = document.createElement("link");
-      link.rel = "canonical";
-      document.head.appendChild(link);
-    }
-    link.href = url;
+      let link = document.querySelector("link[rel='canonical']");
+      if (!link) {
+        link = document.createElement("link");
+        link.rel = "canonical";
+        document.head.appendChild(link);
+      }
+      link.href = url;
     };
-
-   setCanonical("https://echozy.vercel.app/about-prerender");
-    
+    setCanonical("https://echozy.vercel.app/about-prerender");
 
     // SEO meta tags
     const setMeta = (name, content, isProperty = false) => {
@@ -45,11 +43,21 @@ const AboutPrerender = () => {
       }
     };
 
-    setMeta("description", "Learn about Echozy, a social media platform for authentic connections, communities, and meaningful conversations.");
-    setMeta("og:title", "About Echozy – Connect with Community", true);
-    setMeta("og:description", "Learn about Echozy, a social media platform for authentic connections, communities, and meaningful conversations.", true);
+    // Primary meta
+    setMeta("description", "Learn about Echozy – a modern social media platform built for authentic connections, meaningful communities and genuine conversations online. Created by Ali Sattar.");
+
+    // Open Graph
+    setMeta("og:title", "About Echozy – Our Mission, Story & Values", true);
+    setMeta("og:description", "Learn about Echozy – a modern social media platform built for authentic connections, meaningful communities and genuine conversations online. Created by Ali Sattar.", true);
     setMeta("og:url", "https://echozy.vercel.app/about-prerender", true);
-    setMeta("og:image", "https://echozy.vercel.app/favicon-16x16.png", true);
+    setMeta("og:image", "https://echozy.vercel.app/og-image.png", true);
+    setMeta("og:type", "website", true);
+
+    // Twitter / X Cards
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", "About Echozy – Our Mission, Story & Values");
+    setMeta("twitter:description", "Learn about Echozy – a modern social media platform built for authentic connections, meaningful communities and genuine conversations online.");
+    setMeta("twitter:image", "https://echozy.vercel.app/og-image.png");
   }, []);
 
   return (
