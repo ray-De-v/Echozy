@@ -3,36 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Echozy – Modern Social Media Platform</title>
-    <meta name="description" content="Echozy is a modern social media platform where users share posts, connect with friends and build meaningful communities." />
+
+    <!-- Primary Meta Tags -->
+    <title>Echozy – Connect, Share & Grow Your Social Network</title>
+    <meta name="description" content="Echozy is a modern social media platform where you can share posts, connect with friends, discover communities and grow your personal network. Join today for free." />
+    <meta name="keywords" content="social media, connect with friends, share posts, communities, social network, Echozy" />
+    <meta name="author" content="Ali Sattar" />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://echozy.vercel.app/" />
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-    <!-- Open Graph -->
-    <meta property="og:title" content="Echozy – Modern Social Media Platform" />
-    <meta property="og:description" content="Connect with friends, share posts and explore communities on Echozy." />
+
+    <!-- Language targeting -->
+    <link rel="alternate" hreflang="en" href="https://echozy.vercel.app/" />
+
+    <!-- Favicon (all sizes) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Echozy" />
     <meta property="og:url" content="https://echozy.vercel.app/" />
-    <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9vwrPtB_wWthHwsioFwPqpeQPBgo_hfIkIw&s" />
-    <script type="application/ld+json"> 
-      { "@context": "https://schema.org",
+    <meta property="og:title" content="Echozy – Connect, Share & Grow Your Social Network" />
+    <meta property="og:description" content="Join Echozy – the modern social media platform to share posts, connect with friends and discover communities. Sign up free today." />
+    <meta property="og:image" content="https://echozy.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Echozy – Modern Social Media Platform" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@echozy" />
+    <meta name="twitter:url" content="https://echozy.vercel.app/" />
+    <meta name="twitter:title" content="Echozy – Connect, Share & Grow Your Social Network" />
+    <meta name="twitter:description" content="Join Echozy – the modern social media platform to share posts, connect with friends and discover communities." />
+    <meta name="twitter:image" content="https://echozy.vercel.app/og-image.png" />
+    <meta name="twitter:image:alt" content="Echozy – Modern Social Media Platform" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Echozy",
       "url": "https://echozy.vercel.app/",
-      "description": "Echozy is a modern social media platform where users share posts, connect with friends and build communities.",
-      "creator": { 
-      "@type": "Person",
-      "name": "Ali Sattar", 
-      "sameAs": [ "https://www.facebook.com/syed.ali.sattar.bacha/", ] } } </script>
-      <!-- Google tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVC77W5BKR"></script>
-     <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-     gtag('config', 'G-QVC77W5BKR');
-</script>
+      "description": "Echozy is a modern social media platform where users share posts, connect with friends and build meaningful communities.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://echozy.vercel.app/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Ali Sattar",
+        "sameAs": [
+          "https://www.facebook.com/syed.ali.sattar.bacha/"
+        ]
+      }
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVC77W5BKR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QVC77W5BKR');
+    </script>
+
+    <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="aWN3ffwOFKZYgaaUyO4CMZdUCbnLPvFpARA9mxXGj9c" />
+
+    <!-- Font Awesome (consider replacing with specific icons later) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   </head>
   <body>
     <div id="app"></div>
