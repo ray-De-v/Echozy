@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
+Allow: /login
+Allow: /about-prerender
+
+Disallow: /home
+Disallow: /profile
+Disallow: /messages
+Disallow: /all-friends
+Disallow: /echo-ai
+Disallow: /about-us
+Disallow: /api/
 
 Sitemap: https://echozy.vercel.app/sitemap.xml
