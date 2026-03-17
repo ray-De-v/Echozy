@@ -66,6 +66,7 @@ const LandingPage = () => {
   const particleCount = typeof window !== "undefined" && window.innerWidth < 768 ? 6 : 15;
 
   return (
+    <>
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600">
       {/* Dynamic Background Images */}
       <div className="absolute inset-0 transition-opacity duration-1000 ease-in-out">
@@ -157,6 +158,105 @@ const LandingPage = () => {
         </motion.div>
       </div>
     </div>
+
+
+      {/* SEO Content — visible to Google */}
+        <div className="relative z-10 max-w-4xl mx-auto px-6 pb-16">
+          
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <h2 className="text-xl font-bold text-white mb-3">
+                Share Posts on Echozy
+              </h2>
+              <p className="text-blue-100 text-sm leading-relaxed">
+                Share your thoughts, photos and life moments with friends and followers on Echozy. Express yourself on a social media platform built for real people.
+              </p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <h2 className="text-xl font-bold text-white mb-3">
+                Connect with Friends
+              </h2>
+              <p className="text-blue-100 text-sm leading-relaxed">
+                Find and connect with friends, classmates and colleagues on Echozy. Send friend requests, build your network and stay updated with people who matter.
+              </p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <h2 className="text-xl font-bold text-white mb-3">
+                Chat with Echo AI
+              </h2>
+              <p className="text-blue-100 text-sm leading-relaxed">
+                Echozy includes Echo AI — an intelligent assistant powered by Gemini. Get answers, ideas and creative help built directly into your social media experience.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-white mb-3">
+                Why Choose Echozy Social Media Platform?
+              </h2>
+              <p className="text-blue-100 text-sm leading-relaxed mb-3">
+                Echozy is a modern social media platform built for everyone. Unlike other social networks that prioritize ads and algorithms, Echozy puts people first. No manipulative feeds, no data selling, no compromise.
+              </p>
+              <p className="text-blue-100 text-sm leading-relaxed">
+                Whether you want to share posts, connect with friends, send direct messages, discover communities or chat with Echo AI — Echozy is the only social media platform you need.
+              </p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-white mb-3">
+                How Echozy Works
+              </h2>
+              <ul className="space-y-2">
+                <li className="text-blue-100 text-sm flex items-start gap-2">
+                  <span className="text-yellow-300 font-bold flex-shrink-0">1.</span>
+                  Create your free Echozy account in less than 60 seconds
+                </li>
+                <li className="text-blue-100 text-sm flex items-start gap-2">
+                  <span className="text-yellow-300 font-bold flex-shrink-0">2.</span>
+                  Set up your profile with a photo and personal bio
+                </li>
+                <li className="text-blue-100 text-sm flex items-start gap-2">
+                  <span className="text-yellow-300 font-bold flex-shrink-0">3.</span>
+                  Find and connect with friends and people you know
+                </li>
+                <li className="text-blue-100 text-sm flex items-start gap-2">
+                  <span className="text-yellow-300 font-bold flex-shrink-0">4.</span>
+                  Share your first post and start building your network
+                </li>
+                <li className="text-blue-100 text-sm flex items-start gap-2">
+                  <span className="text-yellow-300 font-bold flex-shrink-0">5.</span>
+                  Explore communities and chat with Echo AI anytime
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
+            <h2 className="text-2xl font-bold text-white mb-4">
+              Join Echozy — The Modern Social Media Platform
+            </h2>
+            <p className="text-blue-100 leading-relaxed max-w-2xl mx-auto mb-6">
+              Thousands of users are already connecting, sharing and growing on Echozy. Join the modern social media platform that was built for people, not profit. Sign up completely free today and start your journey on Echozy.
+            </p>
+            
+              href="/login"
+              className="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition-colors"
+            >
+              Get Started on Echozy — It is Free
+            </a>
+          </div>
+
+          <div className="text-center text-blue-200 text-xs">
+            <p>Echozy — Modern Social Media Platform · Built with MERN Stack · Created by Ali Sattar · © 2026</p>
+            <div className="flex justify-center gap-6 mt-3">
+              <a href="/login" className="text-blue-300 hover:text-white transition-colors">Login</a>
+              <a href="/about-prerender" className="text-blue-300 hover:text-white transition-colors">About Echozy</a>
+            </div>
+          </div>
+
+        </div>
+      
+      </>
   );
 };
 
