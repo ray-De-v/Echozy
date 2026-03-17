@@ -30,11 +30,11 @@ useEffect(() => {
   };
 
   // Standard meta description
-  setMeta("description", "Log in to Echozy – the modern social media platform to share posts, connect with friends, discover communities and grow your personal network. Join thousands today.");
+  setMeta("description", "Log in to Echozy – the modern social media platform to share posts, connect with friends, discover communities and grow your personal network. Join today.");
 
   // Open Graph meta tags
   setMeta("og:title", "Login to Echozy – Connect, Share & Grow Your Network", true);
-  setMeta("og:description", "Log in to Echozy – the modern social media platform to share posts, connect with friends, discover communities and grow your personal network. Join thousands today.", true);
+  setMeta("og:description", "Log in to Echozy – the modern social media platform to share posts, connect with friends, discover communities and grow your personal network. Join today.", true);
   setMeta("og:type", "website", true);
   setMeta("og:url", "https://echozy.vercel.app/login", true);
   setMeta("og:image", "https://echozy.vercel.app/og-image.png", true);
