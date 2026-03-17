@@ -251,7 +251,7 @@ const LandingPage = () => {
             <p>Echozy — Modern Social Media Platform · Built with MERN Stack · Created by Ali Sattar · © 2026</p>
             <div className="flex justify-center gap-6 mt-3">
               <Link to="/login" className="text-blue-300 hover:text-white transition-colors">Login</Link>
-              <a Link to="/about-prerender" className="text-blue-300 hover:text-white transition-colors">About Echozy</Link>
+              <Link to="/about-prerender" className="text-blue-300 hover:text-white transition-colors">About Echozy</Link>
             </div>
           </div>
 
