@@ -5,10 +5,9 @@ import toast from "react-hot-toast";
 import { useAuth } from "../Context/authContext";
 
 const Login = () => {
+useEffect(() => {
+  document.title = "Login to Echozy – Connect, Share & Grow Your Network";
 
-  useEffect(() => {
-  document.title = "Login – Echozy Social Media";
-  
   const setMeta = (name, content, property = false) => {
     let tag;
     if (property) {
@@ -31,17 +30,21 @@ const Login = () => {
   };
 
   // Standard meta description
-  setMeta("description", "Login to Echozy, the modern social media app to connect with friends and communities.");
+  setMeta("description", "Log in to Echozy – the modern social media platform to share posts, connect with friends, discover communities and grow your personal network. Join thousands today.");
 
-  // Open Graph meta tags (for social sharing)
-  setMeta("og:title", "Login – Echozy Social Media", true);
-  setMeta("og:description", "Login to Echozy, the modern social media app to connect with friends and communities.", true);
+  // Open Graph meta tags
+  setMeta("og:title", "Login to Echozy – Connect, Share & Grow Your Network", true);
+  setMeta("og:description", "Log in to Echozy – the modern social media platform to share posts, connect with friends, discover communities and grow your personal network. Join thousands today.", true);
   setMeta("og:type", "website", true);
   setMeta("og:url", "https://echozy.vercel.app/login", true);
-  setMeta("og:image", "https://echozy.vercel.app/favicon-16x16.png", true);
+  setMeta("og:image", "https://echozy.vercel.app/og-image.png", true);
 
+  // Twitter / X Cards
+  setMeta("twitter:card", "summary_large_image");
+  setMeta("twitter:title", "Login to Echozy – Connect, Share & Grow Your Network");
+  setMeta("twitter:description", "Log in to Echozy – the modern social media platform to share posts, connect with friends and discover communities.");
+  setMeta("twitter:image", "https://echozy.vercel.app/og-image.png");
 }, []);
-
 
 
 
