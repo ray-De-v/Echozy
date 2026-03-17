@@ -9,7 +9,7 @@ const LandingPage = () => {
 
   // 1️⃣ Page-specific SEO meta
   useEffect(() => {
-    document.title = "Echozy – Connect with your Community";
+    document.title = "Echozy – Connect, Share & Grow Your Social Network";
 
     const updateMeta = (selector, attr, value, isProperty = false) => {
       try {
@@ -31,18 +31,17 @@ const LandingPage = () => {
     updateMeta(
       'meta[name="description"]',
       "content",
-      "Welcome to Echozy, a modern social media platform to connect, share moments, and explore communities."
+      "Join Echozy, the modern social media platform to share posts, connect with friends, discover communities and grow your personal network. Sign up free today."
     );
-
-    updateMeta('meta[property="og:title"]', "content", "Echozy – Connect with your Community", true);
+    updateMeta('meta[property="og:title"]', "content", "Echozy – Connect, Share & Grow Your Social Network", true);
     updateMeta(
       'meta[property="og:description"]',
       "content",
-      "Welcome to Echozy, a modern social media platform to connect, share moments, and explore communities.",
+      "Join Echozy, the modern social media platform to share posts, connect with friends, discover communities and grow your personal network. Sign up free today.",
       true
     );
     updateMeta('meta[property="og:url"]', "content", "https://echozy.vercel.app/", true);
-    updateMeta('meta[property="og:image"]', "content", "https://echozy.vercel.app/favicon-16x16.png", true);
+    updateMeta('meta[property="og:image"]', "content", "https://echozy.vercel.app/og-image.png", true);
   }, []);
 
   // 2️⃣ Background images - memoized to prevent re-creation
