@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { assets } from "./../assets/assets";
 import { useAppContext } from "../Context/Context";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const { navigateTo } = useAppContext();
@@ -238,19 +239,19 @@ const LandingPage = () => {
             <p className="text-blue-100 leading-relaxed max-w-2xl mx-auto mb-6">
               Thousands of users are already connecting, sharing and growing on Echozy. Join the modern social media platform that was built for people, not profit. Sign up completely free today and start your journey on Echozy.
             </p>
-            
-              href="/login"
+            <Link
+              to="/login"
               className="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition-colors"
             >
               Get Started on Echozy — It is Free
-            </a>
+            </Link>
           </div>
 
           <div className="text-center text-blue-200 text-xs">
             <p>Echozy — Modern Social Media Platform · Built with MERN Stack · Created by Ali Sattar · © 2026</p>
             <div className="flex justify-center gap-6 mt-3">
-              <a href="/login" className="text-blue-300 hover:text-white transition-colors">Login</a>
-              <a href="/about-prerender" className="text-blue-300 hover:text-white transition-colors">About Echozy</a>
+              <Link to="/login" className="text-blue-300 hover:text-white transition-colors">Login</Link>
+              <a Link to="/about-prerender" className="text-blue-300 hover:text-white transition-colors">About Echozy</Link>
             </div>
           </div>
 
