@@ -25,4 +25,12 @@ body{
   overflow: hidden !important;
 }
 
+
+/* Add to your global CSS file (e.g., index.css or App.css) */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
 /* You were handling Image hidden property Ali */
