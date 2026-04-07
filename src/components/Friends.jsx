@@ -59,7 +59,7 @@ const Friends = () => {
   const fetchFriends = async () => {
     setLoading(true);
     try {
-      const response = await API.get("api/user/get-friends"); // adjust endpoint if needed
+      const response = await API.get("api/friend/listFriends"); // adjust endpoint if needed
       if (response.data.success) {
         setFriends(response.data.friends);
       } else {
