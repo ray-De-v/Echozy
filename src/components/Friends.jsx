@@ -1,67 +1,19 @@
-// import React from "react";
-// import { useAppContext } from "../Context/Context";
-// import { useState } from "react";
-// import toast from "react-hot-toast";
-// import { useEffect } from "react";
-// import ProfileFriendCard from "./ProfileFriendCard";
-
-// const Friends = () => {
-//   const { API, normalApi } = useAppContext();
-//   const [friends, setFriends] = useState([]);
-
-//   const getFriends = async () => {
-//     const response = await API.get("api/friend/listFriends");
-//     if (response.data.success) {
-//       setFriends(response.data.listFriends);
-//     } else {
-//       toast.error(response.data.message);
-//     }
-//   };
-
-//   useEffect(() => {
-//     getFriends();
-//   }, []);
-
-//   return (
-//     <>
-//       <div className="flex bg-white rounded-xl px-7 py-8 shadow gap-5 max-sm:gap-1 flex-wrap items-center justify-center">
-//         {friends.length > 0 ? (
-//           friends.map((friend, index) => {
-//             return <ProfileFriendCard key={index} friend={friend} />;
-//           })
-//         ) : (
-//           <p className="text-center mx-auto text-gray-500">No friends yet</p>
-//         )}
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Friends;
-
-
-
 import React, { useEffect, useState } from "react";
-import { useAuth } from "../Context/authContext";
 import { useAppContext } from "../Context/Context";
 import toast from "react-hot-toast";
+import ProfileFriendCard from "./ProfileFriendCard"; // restore your card component
 
 const Friends = () => {
+  const { API, normalApi } = useAppContext();
   const [friends, setFriends] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const { API } = useAppContext();
-  const { user } = useAuth();
+  const [loading, setLoading] = useState(true); // ✅ added loader state
 
-  useEffect(() => {
-    fetchFriends();
-  }, []);
-
-  const fetchFriends = async () => {
+  const getFriends = async () => {
     setLoading(true);
     try {
-      const response = await API.get("api/friend/listFriends"); // adjust endpoint if needed
+      const response = await API.get("api/friend/listFriends");
       if (response.data.success) {
-        setFriends(response.data.friends);
+        setFriends(response.data.listFriends); // ✅ original property name
       } else {
         toast.error(response.data.message);
       }
@@ -72,6 +24,11 @@ const Friends = () => {
     }
   };
 
+  useEffect(() => {
+    getFriends();
+  }, []);
+
+  // ✅ Loader UI
   if (loading) {
     return (
       <div className="bg-white rounded-xl shadow-sm p-8 border border-gray-200">
@@ -83,6 +40,7 @@ const Friends = () => {
     );
   }
 
+  // ✅ Empty state
   if (friends.length === 0) {
     return (
       <div className="bg-white rounded-xl shadow-sm p-8 border border-gray-200 text-center">
@@ -93,20 +51,12 @@ const Friends = () => {
     );
   }
 
+  // ✅ Original layout using your ProfileFriendCard
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-4">
-        {friends.map((friend) => (
-          <div key={friend._id} className="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
-            <img
-              src={friend.profilePhoto || "/default_profile.jpeg"}
-              alt={friend.firstName}
-              className="w-20 h-20 rounded-full object-cover border-2 border-white shadow-sm"
-            />
-            <p className="mt-2 font-medium text-sm text-center">{friend.firstName} {friend.lastName}</p>
-          </div>
-        ))}
-      </div>
+    <div className="bg-white rounded-xl px-7 py-8 shadow gap-5 max-sm:gap-1 flex flex-wrap items-center justify-center">
+      {friends.map((friend, index) => (
+        <ProfileFriendCard key={friend._id || index} friend={friend} />
+      ))}
     </div>
   );
 };
